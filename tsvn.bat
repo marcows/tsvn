@@ -13,20 +13,26 @@ if "%1" == "" (
 	echo.
 	echo Available subcommands:
 	echo    blame (praise, annotate, ann^)
+	echo    commit (ci^)
 	echo    diff (di^)
 	echo    help (?, h^)
 	echo    list (ls^)
 	echo    log
 	echo    proplist (plist, pl^)
 	echo    status (stat, st^)
+	echo    update (up^)
 	exit /B 0
 )
 
 rem command mapping for tortoiseproc
+set TORTOISECMD=
 if "%1" == "blame"       set TORTOISECMD=blame
 if "%1" == "praise"      set TORTOISECMD=blame
 if "%1" == "annotate"    set TORTOISECMD=blame
 if "%1" == "ann"         set TORTOISECMD=blame
+
+if "%1" == "commit"      set TORTOISECMD=commit
+if "%1" == "ci"          set TORTOISECMD=commit
 
 if "%1" == "diff"        set TORTOISECMD=diff
 if "%1" == "di"          set TORTOISECMD=diff
@@ -48,6 +54,9 @@ if "%1" == "status"      set TORTOISECMD=repostatus
 if "%1" == "stat"        set TORTOISECMD=repostatus
 if "%1" == "st"          set TORTOISECMD=repostatus
 
+if "%1" == "update"      set TORTOISECMD=update
+if "%1" == "up"          set TORTOISECMD=update
+
 rem Unknown subcommand -> abort
 if "%TORTOISECMD%" == "" (
 	echo Unknown subcommand: '%1'
@@ -59,6 +68,7 @@ rem Shift away %1 (tsvn.bat subcommand) for parameter parsing
 shift
 
 rem Parse parameters
+set TORTOISEPATH=
 :parse
 if "%1" == "" goto endparse
 
