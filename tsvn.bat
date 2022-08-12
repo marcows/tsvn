@@ -15,7 +15,7 @@ if "%1" == "" (
 	echo    blame (praise, annotate, ann^)
 	echo    commit (ci^)
 	echo    diff (di^)
-	echo    help (?, h^)
+	echo    help (h^)
 	echo    list (ls^)
 	echo    log
 	echo    proplist (plist, pl^)
@@ -38,7 +38,6 @@ if "%1" == "diff"        set TORTOISECMD=diff
 if "%1" == "di"          set TORTOISECMD=diff
 
 if "%1" == "help"        set TORTOISECMD=help
-if "%1" == "?"           set TORTOISECMD=help
 if "%1" == "h"           set TORTOISECMD=help
 
 if "%1" == "list"        set TORTOISECMD=repobrowser

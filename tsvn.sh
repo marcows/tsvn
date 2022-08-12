@@ -15,7 +15,7 @@ then
 	echo "   blame (praise, annotate, ann)"
 	echo "   commit (ci)"
 	echo "   diff (di)"
-	echo "   help (?, h)"
+	echo "   help (h)"
 	echo "   list (ls)"
 	echo "   log"
 	echo "   proplist (plist, pl)"
@@ -32,7 +32,7 @@ commit|ci)
 	TORTOISECMD=commit;;
 diff|di)
 	TORTOISECMD=diff;;
-help|\?|h)
+help|h)
 	TORTOISECMD=help;;
 list|ls)
 	TORTOISECMD=repobrowser;;
